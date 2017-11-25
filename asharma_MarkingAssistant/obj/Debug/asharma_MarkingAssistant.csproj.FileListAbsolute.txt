@@ -1,1 +1,9 @@
 C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\bin\Debug\asharma_MarkingAssistant.exe.config
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\bin\Debug\asharma_MarkingAssistant.exe
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\bin\Debug\asharma_MarkingAssistant.pdb
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.csprojResolveAssemblyReference.cache
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.Properties.Resources.resources
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.csproj.GenerateResource.Cache
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.exe
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.pdb
+C:\Users\Arigold\Desktop\UI Design\asharma_MarkingAssistant\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.thisForm.resources
