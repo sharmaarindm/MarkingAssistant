@@ -85,6 +85,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Untitled.png" />
     <None Include="Resources\checked.png" />
     <None Include="Resources\unchecked.png" />
     <None Include="BGImage.jpg" />
