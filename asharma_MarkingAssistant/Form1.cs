@@ -15,7 +15,7 @@ namespace asharma_MarkingAssistant
         bool loads = false;
         bool compiles = false;
         bool runs = false;
-
+        bool browse = false;
        // int markingProgress;
 
         Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
@@ -128,15 +128,17 @@ namespace asharma_MarkingAssistant
                 {
                     textBox1.Text = file;
                     progressbarcontrol();
+                    browse = true;
                 }
                 else
                 {
-                    string message = "The file provided is not a Visual Studio Solution file.";
+                    string message = "The file provided is not a Visual Studio Solution file(.sln)";
                     string caption = "Invalid Format!";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                    
                     MessageBox.Show(message, caption, buttons,MessageBoxIcon.Error);
                     progressBar1.Value = 0;
+                    browse = false;
                 }
             }
         }
@@ -184,25 +186,36 @@ namespace asharma_MarkingAssistant
         }
         void progressbarcontrol()
         {
-            if (mytabControler.SelectedTab == tabPage1)
+            if (browse)
             {
-                progressBar1.Value = 20;
+                if (mytabControler.SelectedTab == tabPage1)
+                {
+                    progressBar1.Value = 20;
+                }
+                else if (mytabControler.SelectedTab == tabPage2)
+                {
+                    progressBar2.Value = 40;
+                }
+                else if (mytabControler.SelectedTab == tabPage3)
+                {
+                    progressBar3.Value = 60;
+                }
+                else if (mytabControler.SelectedTab == tabPage4)
+                {
+                    progressBar4.Value = 80;
+                }
+                else if (mytabControler.SelectedTab == tabPage5)
+                {
+                    progressBar5.Value = 100;
+                }
             }
-            else if (mytabControler.SelectedTab == tabPage2)
+            else
             {
-                progressBar2.Value = 40;
-            }
-            else if (mytabControler.SelectedTab == tabPage3)
-            {
-                progressBar3.Value = 60;
-            }
-            else if (mytabControler.SelectedTab == tabPage4)
-            {
-                progressBar4.Value = 80;
-            }
-            else if (mytabControler.SelectedTab == tabPage5)
-            {
-                progressBar5.Value = 100;
+                progressBar1.Value = 0;
+                progressBar2.Value = 0;
+                progressBar3.Value = 0;
+                progressBar4.Value = 0;
+                progressBar5.Value = 0;
             }
         }
 
@@ -219,7 +232,7 @@ namespace asharma_MarkingAssistant
         bool cancelChanges()
         {
             bool retval = false;
-            string message = "are you sure you wish to cancel changes? all the progress will be lost.";
+            string message = "Are you sure you wish to cancel changes? all the progress will be lost.";
             string caption = "Cancel changes?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;

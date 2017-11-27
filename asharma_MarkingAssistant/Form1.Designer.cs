@@ -62,6 +62,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.mytabControler = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -72,6 +73,7 @@
             this.progressBar4 = new System.Windows.Forms.ProgressBar();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button21 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -83,8 +85,11 @@
             this.finish = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.progressBar5 = new System.Windows.Forms.ProgressBar();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -97,6 +102,11 @@
             // 
             this.tabPage3.BackgroundImage = global::asharma_MarkingAssistant.Properties.Resources.BGImage;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage3.Controls.Add(this.textBox9);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.textBox6);
+            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.textBox8);
             this.tabPage3.Controls.Add(this.button16);
             this.tabPage3.Controls.Add(this.button17);
             this.tabPage3.Controls.Add(this.label10);
@@ -504,12 +514,23 @@
             this.tabPage4.Text = "Originality";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(44, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(205, 29);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Originality Report:";
+            // 
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(471, 174);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(274, 141);
             this.textBox5.TabIndex = 28;
             this.textBox5.Text = "https://stackoverflow.com/\r\nhttps://github.com/\r\nhttps://msdn.microsoft.com/";
@@ -587,6 +608,7 @@
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.Red;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.White;
@@ -622,6 +644,16 @@
             this.tabPage5.TabIndex = 9;
             this.tabPage5.Text = "Feedback";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(45, 35);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(204, 29);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Market Feedback:";
             // 
             // label13
             // 
@@ -733,25 +765,65 @@
             this.progressBar5.Size = new System.Drawing.Size(528, 47);
             this.progressBar5.TabIndex = 11;
             // 
-            // label11
+            // textBox6
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(44, 37);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(205, 29);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Originality Report:";
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(53, 171);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(496, 141);
+            this.textBox6.TabIndex = 31;
+            this.textBox6.Text = "Total Lines in the code\r\n\r\nTotal Lines commented\r\n\r\nTotal uncommented Lines";
             // 
-            // label15
+            // textBox7
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(45, 35);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(204, 29);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Market Feedback:";
+            this.textBox7.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(53, 138);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(660, 36);
+            this.textBox7.TabIndex = 30;
+            this.textBox7.Text = "55.5%";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(80)))));
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox8.Enabled = false;
+            this.textBox8.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.Color.White;
+            this.textBox8.Location = new System.Drawing.Point(53, 98);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(660, 43);
+            this.textBox8.TabIndex = 29;
+            this.textBox8.Text = "Comment Coverage Overview:";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(48, 32);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(309, 29);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Comment Coverage Details:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(552, 171);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(161, 141);
+            this.textBox9.TabIndex = 33;
+            this.textBox9.Text = "1254\r\n\r\n695\r\n\r\n559";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // thisForm
             // 
@@ -842,6 +914,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
 
