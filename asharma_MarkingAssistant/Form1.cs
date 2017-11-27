@@ -16,7 +16,7 @@ namespace asharma_MarkingAssistant
         bool compiles = false;
         bool runs = false;
 
-        int markingProgress;
+       // int markingProgress;
 
         Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
 
@@ -31,7 +31,7 @@ namespace asharma_MarkingAssistant
             //Icon thisIcon = new Icon("C:\\Users\\Arigold\\Desktop\\UI Design\\asharma_MarkingAssistant\\asharma_MarkingAssistant\\titleICON.ico");
             //this.Icon = thisIcon;
             this.Invalidate();
-            progressbarcontrol();
+            
         }
 
 
@@ -119,7 +119,26 @@ namespace asharma_MarkingAssistant
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            var FD = new System.Windows.Forms.OpenFileDialog();
+            DialogResult result = FD.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                string file = FD.FileName;
+                if(file.Contains(".sln"))
+                {
+                    textBox1.Text = file;
+                    progressbarcontrol();
+                }
+                else
+                {
+                    string message = "The file provided is not a Visual Studio Solution file.";
+                    string caption = "Invalid Format!";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                   
+                    MessageBox.Show(message, caption, buttons,MessageBoxIcon.Error);
+                    progressBar1.Value = 0;
+                }
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -197,9 +216,9 @@ namespace asharma_MarkingAssistant
             cancelChanges();
         }
 
-        void cancelChanges()
+        bool cancelChanges()
         {
-
+            bool retval = false;
             string message = "are you sure you wish to cancel changes? all the progress will be lost.";
             string caption = "Cancel changes?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -209,28 +228,9 @@ namespace asharma_MarkingAssistant
 
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                this.Close();
+                retval = true;
             }
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            cancelChanges();
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            cancelChanges();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            cancelChanges();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            cancelChanges();
+            return retval;
         }
 
         private void thisForm_Load(object sender, EventArgs e)
@@ -258,6 +258,15 @@ namespace asharma_MarkingAssistant
             // Set up the ToolTip text for the Button and Checkbox.
             toolTip1.SetToolTip(this.button7, "Browse to the solution(.sln) file");
             toolTip1.SetToolTip(this.button21, "Select the part of code that you wish\nto provide a comment for from the \nCode Marked area and then select the\ntype of comment you wish to provide.");
+            toolTip1.SetToolTip(this.finish, "Generate report");
+        }
+
+        private void thisForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(!cancelChanges())
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
