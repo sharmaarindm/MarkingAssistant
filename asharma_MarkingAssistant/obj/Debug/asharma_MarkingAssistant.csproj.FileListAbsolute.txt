@@ -17,3 +17,4 @@ C:\Users\asharma3382\Desktop\UID\asharma_MarkingAssistant\obj\Debug\asharma_Mark
 C:\Users\asharma3382\Desktop\UID\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.csproj.CoreCompileInputs.cache
 C:\Users\asharma3382\Desktop\UID\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.exe
 C:\Users\asharma3382\Desktop\UID\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.pdb
+C:\Users\asharma3382\Desktop\UID\asharma_MarkingAssistant\obj\Debug\asharma_MarkingAssistant.Form2.resources

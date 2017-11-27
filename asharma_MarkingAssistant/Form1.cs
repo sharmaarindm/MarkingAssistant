@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,9 @@ namespace asharma_MarkingAssistant
         bool compiles = false;
         bool runs = false;
         bool browse = false;
-       // int markingProgress;
+        string tmpCode;
 
         Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
-
 
         public thisForm()
         {
@@ -28,13 +28,13 @@ namespace asharma_MarkingAssistant
 
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //Icon thisIcon = new Icon("C:\\Users\\Arigold\\Desktop\\UI Design\\asharma_MarkingAssistant\\asharma_MarkingAssistant\\titleICON.ico");
-            //this.Icon = thisIcon;
+
             this.Invalidate();
+            readCode();
+            textBox11.Text = textBox10.Text = tmpCode;
+            textBox11.ScrollBars = textBox10.ScrollBars = ScrollBars.Vertical;
             
         }
-
-
 
         private void mytabControler_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -127,8 +127,15 @@ namespace asharma_MarkingAssistant
                 if(file.Contains(".sln"))
                 {
                     textBox1.Text = file;
-                    progressbarcontrol();
                     browse = true;
+                    progressbarcontrol();
+                    
+
+                    string message = "Visual Studio Solution file succesfully selected.";
+                    string caption = "File Detected";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+                    MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -261,8 +268,7 @@ namespace asharma_MarkingAssistant
         {
             ToolTip toolTip1 = new ToolTip();
 
-            // Set up the delays for the ToolTip.
-            //toolTip1.AutoPopDelay = 5000;
+            
             toolTip1.InitialDelay = 50;
             toolTip1.ReshowDelay = 50;
             // Force the ToolTip text to be displayed whether or not the form is active.
@@ -281,5 +287,46 @@ namespace asharma_MarkingAssistant
                 e.Cancel = true;
             }
         }
+
+        private void finish_Click(object sender, EventArgs e)
+        {
+            string message = "Do you wish to save the report file as .txt?";
+            string caption = "Save Feedback";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(message, caption, buttons,MessageBoxIcon.Information);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)//create report
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+                saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                saveFileDialog1.FilterIndex = 2;
+                saveFileDialog1.RestoreDirectory = true;
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName, true))
+                    {
+                        file.WriteLine("Fourth line");
+                    }
+                }
+                buttons = MessageBoxButtons.OK;
+                message = "Feedback Report saved to "+saveFileDialog1.FileName;
+                caption = "file saved";
+                MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+        void readCode()
+        {
+             tmpCode = System.IO.File.ReadAllText(@"codeFile.txt");
+        }
+
+       
     }
 }

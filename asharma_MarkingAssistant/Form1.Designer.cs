@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(thisForm));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,10 +68,10 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.mytabControler = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button12 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -76,7 +82,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button21 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.button20 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -85,11 +90,7 @@
             this.finish = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.progressBar5 = new System.Windows.Forms.ProgressBar();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -120,6 +121,66 @@
             this.tabPage3.TabIndex = 7;
             this.tabPage3.Text = "Comment Coverage";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(552, 171);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(161, 141);
+            this.textBox9.TabIndex = 33;
+            this.textBox9.Text = "1254\r\n\r\n695\r\n\r\n559";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(48, 32);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(309, 29);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Comment Coverage Details:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(53, 171);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(496, 141);
+            this.textBox6.TabIndex = 31;
+            this.textBox6.Text = "Total Lines in the code\r\n\r\nTotal Lines commented\r\n\r\nTotal uncommented Lines";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(53, 138);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(660, 36);
+            this.textBox7.TabIndex = 30;
+            this.textBox7.Text = "55.5%";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(80)))));
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox8.Enabled = false;
+            this.textBox8.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.Color.White;
+            this.textBox8.Location = new System.Drawing.Point(53, 98);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(660, 43);
+            this.textBox8.TabIndex = 29;
+            this.textBox8.Text = "Comment Coverage Overview:";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button16
             // 
@@ -495,10 +556,10 @@
             // 
             this.tabPage4.BackgroundImage = global::asharma_MarkingAssistant.Properties.Resources.BGImage;
             this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage4.Controls.Add(this.textBox10);
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.textBox5);
             this.tabPage4.Controls.Add(this.textBox4);
-            this.tabPage4.Controls.Add(this.listBox1);
             this.tabPage4.Controls.Add(this.button12);
             this.tabPage4.Controls.Add(this.button14);
             this.tabPage4.Controls.Add(this.label8);
@@ -514,6 +575,16 @@
             this.tabPage4.Text = "Originality";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.textBox10.Location = new System.Drawing.Point(49, 101);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(379, 214);
+            this.textBox10.TabIndex = 30;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -527,7 +598,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(471, 174);
+            this.textBox5.Location = new System.Drawing.Point(448, 174);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
@@ -538,22 +609,12 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(471, 141);
+            this.textBox4.Location = new System.Drawing.Point(448, 141);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(274, 36);
             this.textBox4.TabIndex = 27;
             this.textBox4.Text = "12%";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(50, 101);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(376, 212);
-            this.listBox1.TabIndex = 24;
             // 
             // button12
             // 
@@ -612,7 +673,7 @@
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(471, 101);
+            this.textBox3.Location = new System.Drawing.Point(448, 101);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(274, 43);
@@ -624,10 +685,10 @@
             // 
             this.tabPage5.BackgroundImage = global::asharma_MarkingAssistant.Properties.Resources.BGImage;
             this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage5.Controls.Add(this.textBox11);
             this.tabPage5.Controls.Add(this.label15);
             this.tabPage5.Controls.Add(this.label13);
             this.tabPage5.Controls.Add(this.button21);
-            this.tabPage5.Controls.Add(this.listBox2);
             this.tabPage5.Controls.Add(this.button20);
             this.tabPage5.Controls.Add(this.button18);
             this.tabPage5.Controls.Add(this.label12);
@@ -675,16 +736,6 @@
             this.button21.Text = "?";
             this.button21.UseVisualStyleBackColor = true;
             this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // listBox2
-            // 
-            this.listBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(50, 106);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(376, 212);
-            this.listBox2.TabIndex = 28;
             // 
             // button20
             // 
@@ -747,6 +798,7 @@
             this.finish.TabIndex = 22;
             this.finish.Text = "Finish";
             this.finish.UseVisualStyleBackColor = true;
+            this.finish.Click += new System.EventHandler(this.finish_Click);
             // 
             // label14
             // 
@@ -765,65 +817,15 @@
             this.progressBar5.Size = new System.Drawing.Size(528, 47);
             this.progressBar5.TabIndex = 11;
             // 
-            // textBox6
+            // textBox11
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(53, 171);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(496, 141);
-            this.textBox6.TabIndex = 31;
-            this.textBox6.Text = "Total Lines in the code\r\n\r\nTotal Lines commented\r\n\r\nTotal uncommented Lines";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(53, 138);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(660, 36);
-            this.textBox7.TabIndex = 30;
-            this.textBox7.Text = "55.5%";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(80)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(53, 98);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(660, 43);
-            this.textBox8.TabIndex = 29;
-            this.textBox8.Text = "Comment Coverage Overview:";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(48, 32);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(309, 29);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "Comment Coverage Details:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(552, 171);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(161, 141);
-            this.textBox9.TabIndex = 33;
-            this.textBox9.Text = "1254\r\n\r\n695\r\n\r\n559";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox11.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.textBox11.Location = new System.Drawing.Point(50, 106);
+            this.textBox11.Multiline = true;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(376, 212);
+            this.textBox11.TabIndex = 32;
             // 
             // thisForm
             // 
@@ -835,8 +837,8 @@
             this.ClientSize = new System.Drawing.Size(1000, 550);
             this.Controls.Add(this.mytabControler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "thisForm";
-            this.ShowIcon = false;
             this.Text = "Code-Marker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.thisForm_FormClosing);
             this.Load += new System.EventHandler(this.thisForm_Load);
@@ -904,11 +906,9 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label12;
@@ -919,6 +919,8 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
     }
 }
 
