@@ -115,17 +115,7 @@ namespace asharma_MarkingAssistant
             }
         }
 
-        private void tabPage2_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawLine(pen, 120, 400, 500, 400);
-        }
-
-        private void tabPage5_Paint(object sender, PaintEventArgs e)
-        {
-          
-        }
-
-    
+ 
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -200,6 +190,74 @@ namespace asharma_MarkingAssistant
         private void mytabControler_SelectedIndexChanged(object sender, EventArgs e)
         {
             progressbarcontrol();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            cancelChanges();
+        }
+
+        void cancelChanges()
+        {
+
+            string message = "are you sure you wish to cancel changes? all the progress will be lost.";
+            string caption = "Cancel changes?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(message, caption, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            cancelChanges();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            cancelChanges();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            cancelChanges();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            cancelChanges();
+        }
+
+        private void thisForm_Load(object sender, EventArgs e)
+        {
+            button6.Enabled = false;
+            tooltips();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            tooltips();
+        }
+
+        void tooltips()
+        {
+            ToolTip toolTip1 = new ToolTip();
+
+            // Set up the delays for the ToolTip.
+            //toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 50;
+            toolTip1.ReshowDelay = 50;
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            toolTip1.ShowAlways = true;
+
+            // Set up the ToolTip text for the Button and Checkbox.
+            toolTip1.SetToolTip(this.button7, "Browse to the solution(.sln) file");
+            toolTip1.SetToolTip(this.button21, "Select the part of code that you wish\nto provide a comment for from the \nCode Marked area and then select the\ntype of comment you wish to provide.");
         }
     }
 }
