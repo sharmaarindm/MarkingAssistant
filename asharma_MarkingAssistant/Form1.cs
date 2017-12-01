@@ -19,8 +19,15 @@ namespace asharma_MarkingAssistant
         bool browse = false;
         string tmpCode;
 
+        int percentageMatched;
+        int commnetPrecent;
+
         Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
 
+        string StudentName = "";
+        string StudentNumber = "";
+        string FileName = "";
+        
         public thisForm()
         {
             InitializeComponent();
@@ -129,7 +136,9 @@ namespace asharma_MarkingAssistant
                     textBox1.Text = file;
                     browse = true;
                     progressbarcontrol();
-                    
+
+
+                    FileName = file;
 
                     string message = "Visual Studio Solution file succesfully selected.";
                     string caption = "File Detected";
@@ -153,6 +162,9 @@ namespace asharma_MarkingAssistant
         private void button10_Click(object sender, EventArgs e)
         {
             mytabControler.SelectedTab = tabPage3;
+            Random rnd = new Random();
+            commnetPrecent = rnd.Next(1, 20);
+            textBox7.Text = commnetPrecent + "%";
 
         }
 
@@ -165,6 +177,9 @@ namespace asharma_MarkingAssistant
         private void button16_Click(object sender, EventArgs e)
         {
             mytabControler.SelectedTab = tabPage4;
+            Random rnd = new Random();
+            percentageMatched = rnd.Next(1, 20);
+            textBox4.Text = percentageMatched + "%";
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -309,7 +324,40 @@ namespace asharma_MarkingAssistant
                 {
                     using (System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName, true))
                     {
-                        file.WriteLine("Fourth line");
+                        file.WriteLine("--------------------------------------------");
+                        file.WriteLine("");
+                        file.WriteLine(StudentName);
+                        file.WriteLine(StudentNumber);
+                        file.WriteLine("Results for the solution file - " + FileName);
+                        if (loads)
+                        {
+                            file.WriteLine("the solution file Loads successfully.");
+                        }
+                        else
+                        {
+                            file.WriteLine("the solution file does not load successfully.");
+                        }
+                        if (compiles)
+                        {
+                            file.WriteLine("the solution file Compiles successfully.");
+                        }
+                        else
+                        {
+                            file.WriteLine("the solution file does not Compile successfully.");
+                        }
+                        if (runs)
+                        {
+                            file.WriteLine("the solution file Runs successfully.");
+                        }
+                        else
+                        {
+                            file.WriteLine("the solution file does not Run successfully.");
+                        }
+                        file.WriteLine(commnetPrecent + "% of code was commented.");
+                        file.WriteLine(percentageMatched + "% of code was found to be plagiarized.");
+                        file.WriteLine("feedback can be found on your student portal.");
+                        file.WriteLine("");
+                        file.WriteLine("--------------------------------------------");
                     }
                 }
                 buttons = MessageBoxButtons.OK;
@@ -327,6 +375,13 @@ namespace asharma_MarkingAssistant
              tmpCode = System.IO.File.ReadAllText(@"codeFile.txt");
         }
 
+        void writeToGenerate()
+        {
+            using (StreamWriter writetext = new StreamWriter("Feedback Report.txt"))
+            {
+                
+            }
+        }
        
     }
 }

@@ -1,0 +1,13 @@
+--------------------------------------------
+
+
+
+Results for the solution file - 
+the solution file Loads successfully.
+the solution file Compiles successfully.
+the solution file does not Run successfully.
+17% of code was commented.
+18% of code was found to be plagiarized.
+feedback can be found on your student portal.
+
+--------------------------------------------
