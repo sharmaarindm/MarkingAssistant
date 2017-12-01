@@ -163,7 +163,7 @@ namespace asharma_MarkingAssistant
         {
             mytabControler.SelectedTab = tabPage3;
             Random rnd = new Random();
-            commnetPrecent = rnd.Next(1, 20);
+            commnetPrecent = rnd.Next(15, 30);
             textBox7.Text = commnetPrecent + "%";
 
         }
@@ -254,7 +254,7 @@ namespace asharma_MarkingAssistant
         bool cancelChanges()
         {
             bool retval = false;
-            string message = "Are you sure you wish to cancel changes? all the progress will be lost.";
+            string message = "Are you sure you wish to cancel changes? all the unsaved progress will be lost.";
             string caption = "Cancel changes?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;

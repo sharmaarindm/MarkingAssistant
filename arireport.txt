@@ -1,0 +1,13 @@
+--------------------------------------------
+
+Student Name = ashar
+Student Number = 123412
+Results for the solution file - C:\Users\asharma3382\Desktop\UID\asharma_MarkingAssistant.sln
+the solution file does not load successfully.
+the solution file Compiles successfully.
+the solution file does not Run successfully.
+27% of code was commented.
+9% of code was found to be plagiarized.
+feedback can be found on your student portal.
+
+--------------------------------------------
