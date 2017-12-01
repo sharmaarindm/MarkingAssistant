@@ -11,3 +11,16 @@ the solution file does not Run successfully.
 feedback can be found on your student portal.
 
 --------------------------------------------
+--------------------------------------------
+
+Student Name = jody
+Student Number = 739332
+Results for the solution file - C:\Users\asharma3382\Desktop\UID\asharma_MarkingAssistant.sln
+the solution file Loads successfully.
+the solution file does not Compile successfully.
+the solution file Runs successfully.
+2% of code was commented.
+5% of code was found to be plagiarized.
+feedback can be found on your student portal.
+
+--------------------------------------------

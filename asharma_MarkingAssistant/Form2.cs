@@ -16,5 +16,12 @@ namespace asharma_MarkingAssistant
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            thisForm.StudentName = this.textBox1.Text;
+            thisForm.StudentNumber = this.textBox2.Text;
+            this.Close();
+        }
     }
 }

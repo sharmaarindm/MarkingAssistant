@@ -24,8 +24,8 @@ namespace asharma_MarkingAssistant
 
         Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
 
-        string StudentName = "";
-        string StudentNumber = "";
+        public static string StudentName = "";
+        public static string StudentNumber = "";
         string FileName = "";
         
         public thisForm()
@@ -305,7 +305,11 @@ namespace asharma_MarkingAssistant
 
         private void finish_Click(object sender, EventArgs e)
         {
-            string message = "Do you wish to save the report file as .txt?";
+            Form2 moreForm = new Form2();
+            moreForm.ShowDialog();
+        
+
+            string message = "Do you wish to save the report file as a .txt?";
             string caption = "Save Feedback";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -326,8 +330,8 @@ namespace asharma_MarkingAssistant
                     {
                         file.WriteLine("--------------------------------------------");
                         file.WriteLine("");
-                        file.WriteLine(StudentName);
-                        file.WriteLine(StudentNumber);
+                        file.WriteLine("Student Name = "+StudentName);
+                        file.WriteLine("Student Number = "+StudentNumber);
                         file.WriteLine("Results for the solution file - " + FileName);
                         if (loads)
                         {
