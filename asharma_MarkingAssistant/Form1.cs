@@ -18,6 +18,10 @@ namespace asharma_MarkingAssistant
         bool runs = false;
         bool browse = false;
         string tmpCode;
+        static string[] files = new string[30];
+        public static string currentComment;
+
+        string CurrPath;
 
         int percentageMatched;
         int commnetPrecent;
@@ -26,6 +30,8 @@ namespace asharma_MarkingAssistant
 
         public static string StudentName = "";
         public static string StudentNumber = "";
+        public static string classFileName;
+
         string FileName = "";
         
         public thisForm()
@@ -37,9 +43,10 @@ namespace asharma_MarkingAssistant
             this.MinimizeBox = false;
 
             this.Invalidate();
-            readCode();
-            textBox11.Text = textBox10.Text = tmpCode;
+            // readCode();
+            // textBox11.Text = textBox10.Text = tmpCode;
             textBox11.ScrollBars = textBox10.ScrollBars = ScrollBars.Vertical;
+            
             
         }
 
@@ -145,6 +152,11 @@ namespace asharma_MarkingAssistant
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
 
                     MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+                    
+                    int index = FD.FileName.LastIndexOf(".");
+                    string a = FD.FileName.Substring(0, index);
+                    CurrPath = a;
+                    GetFileNames(a);
                 }
                 else
                 {
@@ -157,6 +169,7 @@ namespace asharma_MarkingAssistant
                     browse = false;
                 }
             }
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -180,11 +193,40 @@ namespace asharma_MarkingAssistant
             Random rnd = new Random();
             percentageMatched = rnd.Next(1, 20);
             textBox4.Text = percentageMatched + "%";
+            string[] justName = new string[30];
+            int j = 0;
+            for (int i = 0; i < files.Length; i++)
+            {
+                if((Path.GetFileName(files[i]).Contains(".c"))|| (Path.GetFileName(files[i]).Contains(".h"))|| (Path.GetFileName(files[i]).Contains(".cpp"))|| (Path.GetFileName(files[i]).Contains(".cs")))
+                {
+                    justName[j] = Path.GetFileName(files[i]);
+                    j++;
+                }
+            }
+            this.comboBox1.DataSource = justName;
+
+            this.comboBox1.SelectedIndex = 0;
+            
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             mytabControler.SelectedTab = tabPage5;
+
+            string[] justName = new string[30];
+            int j = 0;
+            for (int i = 0; i < files.Length; i++)
+            {
+                if ((Path.GetFileName(files[i]).Contains(".c")) || (Path.GetFileName(files[i]).Contains(".h")) || (Path.GetFileName(files[i]).Contains(".cpp")) || (Path.GetFileName(files[i]).Contains(".cs")))
+                {
+                    justName[j] = Path.GetFileName(files[i]);
+                    j++;
+                }
+            }
+            this.comboBox2.DataSource = justName;
+
+            this.comboBox2.SelectedIndex = 0;
+
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -292,6 +334,7 @@ namespace asharma_MarkingAssistant
             // Set up the ToolTip text for the Button and Checkbox.
             toolTip1.SetToolTip(this.button7, "Browse to the solution(.sln) file");
             toolTip1.SetToolTip(this.button21, "Select the part of code that you wish\nto provide a comment for from the \nCode Marked area and then select the\ntype of comment you wish to provide.");
+            toolTip1.SetToolTip(this.button23, "select the filename from the dropdown to view it.");
             toolTip1.SetToolTip(this.finish, "Generate report");
         }
 
@@ -318,15 +361,8 @@ namespace asharma_MarkingAssistant
 
             if (result == System.Windows.Forms.DialogResult.Yes)//create report
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-                saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                saveFileDialog1.FilterIndex = 2;
-                saveFileDialog1.RestoreDirectory = true;
-
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName, true))
+                
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(StudentName+" Report.txt", true))
                     {
                         file.WriteLine("--------------------------------------------");
                         file.WriteLine("");
@@ -359,13 +395,12 @@ namespace asharma_MarkingAssistant
                         }
                         file.WriteLine(commnetPrecent + "% of code was commented.");
                         file.WriteLine(percentageMatched + "% of code was found to be plagiarized.");
-                        file.WriteLine("feedback can be found on your student portal.");
+                        file.WriteLine("feedback can be found in codefile.txt");
                         file.WriteLine("");
                         file.WriteLine("--------------------------------------------");
                     }
-                }
                 buttons = MessageBoxButtons.OK;
-                message = "Feedback Report saved to "+saveFileDialog1.FileName;
+                message = "Report saved to "+ StudentName + " Report.txt";
                 caption = "file saved";
                 MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
             }
@@ -374,18 +409,67 @@ namespace asharma_MarkingAssistant
                 this.Close();
             }
         }
-        void readCode()
+        void readCode(string Name)
         {
-             tmpCode = System.IO.File.ReadAllText(@"codeFile.txt");
+             tmpCode = System.IO.File.ReadAllText(Name);
         }
 
-        void writeToGenerate()
+        private void button20_Click(object sender, EventArgs e) //common
         {
-            using (StreamWriter writetext = new StreamWriter("Feedback Report.txt"))
-            {
-                
-            }
+
+            checkSelectedstring();
+            Form3 moreForm = new Form3();
+            moreForm.ShowDialog();
+            messageforCodefile();
         }
-       
+
+        private void button18_Click(object sender, EventArgs e) //freeform
+        {
+
+            checkSelectedstring();
+            Form4 moreForm = new Form4();
+            moreForm.ShowDialog();
+            messageforCodefile();
+        }
+
+        void messageforCodefile()
+        {
+            string message = "Feedback edited to "+comboBox2.Text;
+            string caption = "Comment Saved";
+
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show(message, caption, buttons, MessageBoxIcon.Information);
+        }
+
+        void checkSelectedstring()
+        {
+            string selected = textBox11.SelectedText;
+        }
+        private static string[] GetFileNames(string path)
+        {
+            string[] files2 = Directory.GetFiles(path);
+            
+
+
+            files = files2;
+            return files2;
+        }
+
+        void fileRead(string fileName)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            readCode(CurrPath+"\\"+ comboBox1.Text);
+            textBox10.Text = tmpCode;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            readCode(CurrPath + "\\" + comboBox2.Text);
+            textBox11.Text = tmpCode;
+        }
     }
 }

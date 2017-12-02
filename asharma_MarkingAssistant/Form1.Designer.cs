@@ -68,6 +68,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.mytabControler = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -79,6 +80,7 @@
             this.progressBar4 = new System.Windows.Forms.ProgressBar();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button21 = new System.Windows.Forms.Button();
@@ -90,7 +92,8 @@
             this.finish = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.progressBar5 = new System.Windows.Forms.ProgressBar();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -556,6 +559,8 @@
             // 
             this.tabPage4.BackgroundImage = global::asharma_MarkingAssistant.Properties.Resources.BGImage;
             this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage4.Controls.Add(this.button23);
+            this.tabPage4.Controls.Add(this.comboBox1);
             this.tabPage4.Controls.Add(this.textBox10);
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.textBox5);
@@ -575,14 +580,24 @@
             this.tabPage4.Text = "Originality";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(49, 101);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(379, 41);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.textBox10.Location = new System.Drawing.Point(49, 101);
+            this.textBox10.Location = new System.Drawing.Point(49, 141);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(379, 214);
+            this.textBox10.Size = new System.Drawing.Size(379, 174);
             this.textBox10.TabIndex = 30;
             // 
             // label11
@@ -685,6 +700,7 @@
             // 
             this.tabPage5.BackgroundImage = global::asharma_MarkingAssistant.Properties.Resources.BGImage;
             this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage5.Controls.Add(this.comboBox2);
             this.tabPage5.Controls.Add(this.textBox11);
             this.tabPage5.Controls.Add(this.label15);
             this.tabPage5.Controls.Add(this.label13);
@@ -705,6 +721,16 @@
             this.tabPage5.TabIndex = 9;
             this.tabPage5.Text = "Feedback";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.textBox11.Location = new System.Drawing.Point(50, 144);
+            this.textBox11.Multiline = true;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(379, 174);
+            this.textBox11.TabIndex = 32;
             // 
             // label15
             // 
@@ -746,6 +772,7 @@
             this.button20.TabIndex = 27;
             this.button20.Text = "Common";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button18
             // 
@@ -756,6 +783,7 @@
             this.button18.TabIndex = 26;
             this.button18.Text = "Freeform";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // label12
             // 
@@ -817,15 +845,25 @@
             this.progressBar5.Size = new System.Drawing.Size(528, 47);
             this.progressBar5.TabIndex = 11;
             // 
-            // textBox11
+            // button23
             // 
-            this.textBox11.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.textBox11.Location = new System.Drawing.Point(50, 106);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(376, 212);
-            this.textBox11.TabIndex = 32;
+            this.button23.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Location = new System.Drawing.Point(255, 34);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(27, 32);
+            this.button23.TabIndex = 32;
+            this.button23.Text = "?";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(50, 106);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(379, 41);
+            this.comboBox2.TabIndex = 33;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // thisForm
             // 
@@ -921,6 +959,9 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 
